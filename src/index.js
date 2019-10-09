@@ -19,7 +19,8 @@ const defaults = {
   body: false,
   lock: false,
   customClass: '',
-  theme: 'LoadingDefault'
+  theme: 'LoadingDefault',
+  themeOption: {}
 }
 
 let fullscreenLoading
@@ -82,17 +83,15 @@ const Loading = (options = {}) => {
     options.body = true
   }
 
-  if(!(options.themeOption instanceof Object)) {
-    options.themeOption = {}
-  }
   if (!hasRightThemes(options)) {
     options.theme = 'LoadingDefault'
   }
   if (options.fullscreen && fullscreenLoading) {
     if(options.theme !== fullscreenLoading.themeName) {
+      let themeOption = Object.assign({}, options.themeOption)
       let theme = new themes[options.theme]({
         el: document.createElement('div'),
-        data: options.themeOption
+        data: themeOption
       })
       fullscreenLoading.$el.getElementsByClassName('teligen-loading-content')[0].removeChild(fullscreenLoading.theme)
       fullscreenLoading.themeInstance.$destroy()
@@ -122,9 +121,10 @@ const Loading = (options = {}) => {
   if (options.fullscreen && options.lock) {
     addClass(parent, 'teligen-loading-parent--hidden')
   }
+  let themeOption = Object.assign({}, options.themeOption)
   let theme = new themes[options.theme]({
     el: document.createElement('div'),
-    data: options.themeOption
+    data: themeOption
   })
   instance.themeInstance = theme
   instance.themeName = options.theme

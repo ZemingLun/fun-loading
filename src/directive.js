@@ -28,6 +28,7 @@ loadingDirective.install = (Vue, Options) => {
     show: false,
     customClass: '',
     theme: 'LoadingDefault',
+    themeOption: {}
   }
   // Vue.use option 覆盖 DefaultOption
   Object.assign(DefaultOption, Options)
@@ -35,13 +36,14 @@ loadingDirective.install = (Vue, Options) => {
   // 判断是否有合法的主题参数
   const hasRightThemes = (option) => option.theme && Object.keys(themes).includes(option.theme)
 
-  // 判断loading配置是否改变
-  const isOptionChange = (option, oldOption) => {
+  // 判断loading配置是否相同
+  const isOptionSame = (option, oldOption) => {
     return Object.entries(oldOption).every(([key, value]) => option[key] === value)
   }
 
   // 显示隐藏Loading内容
   const toggleLoading = (el, binding) => {
+    console.log('toggleLoading toggleLoading')
     let option = getOption(binding.value)
     el.option = option
     if (option.show) {
@@ -53,9 +55,10 @@ loadingDirective.install = (Vue, Options) => {
           el.mask.getElementsByClassName('teligen-loading-content')[0].removeChild(el.theme)
           el.themeInstance.$destroy()
         }
+        let themeOption = Object.assign({},  option.themeOption)
         let theme = new themes[option.theme]({
           el: document.createElement('div'),
-          data: option.themeOption || {}
+          data: themeOption
         })
         el.themeInstance = theme
         el.themeName = option.theme
@@ -122,9 +125,6 @@ loadingDirective.install = (Vue, Options) => {
     let option = {}
     if (clientOption instanceof Object) {
       Object.assign(option, DefaultOption, clientOption)
-      if(!(option.themeOption instanceof Object)) {
-        option.themeOption = {}
-      }
     } else {
       if (clientOption) {
         Object.assign(option, DefaultOption, { show: true })
@@ -139,7 +139,7 @@ loadingDirective.install = (Vue, Options) => {
   Vue.directive('teligen-loading', {
     // 指令绑定时调用
     bind(el, binding, vnode) {
-
+      console.log('bind bind')
       let option = getOption(binding.value)
       // 初始化TeligenLoading组件
 
@@ -161,9 +161,10 @@ loadingDirective.install = (Vue, Options) => {
     },
     // 组件更新时调用
     update(el, binding, vnode) {
+      console.log('update update')
       let option = getOption(binding.value)
       // 判断参数是否一致, 一致则不操作
-      if (!isOptionChange(option, el.option)) {
+      if (isOptionSame(option, el.option)) {
         return
       }
       if (option.show) {
