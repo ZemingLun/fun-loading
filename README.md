@@ -2,6 +2,10 @@
 
 > 这是一个使用简单，样式多样的loading组件。它能是你系统的loading更有趣。
 
+## Demo
+
+[例子](https://zeminglun.github.io/teligen-loading/index.html)
+
 ## 使用
 
 ```bash
