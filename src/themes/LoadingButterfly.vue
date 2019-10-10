@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-butterfly">
+  <div class="fun-loading fun-loading-butterfly">
     <div class="origin">
       <div class="butterfly" :style="{color: butterflyColor, textShadow: '0 0 5px '+whiteColor, animationDuration: duration+'s', animationDelay: -(duration*.42)+'s'}">
         <div class="wing" :class="['wing-'+item]"
@@ -41,13 +41,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-butterfly {
+  .fun-loading-butterfly {
 
     .origin {
       position: absolute;
@@ -199,7 +199,7 @@
           filter: brightness(2);
         }
       }
-      
+
       @keyframes shake {
         0% {
           border-radius: 30px 10px 0px 40px / 45px 80px 0 35px;

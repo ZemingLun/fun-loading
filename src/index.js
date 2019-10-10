@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import TeligenLoading from './teligenLoading.vue'
+import FunLoading from './funLoading.vue'
 import { addClass, getStyle, removeClass } from './dom'
-import './teligenLoading.scss'
+import './funLoading.scss'
 
-const LoadingConstructor = Vue.extend(TeligenLoading)
+const LoadingConstructor = Vue.extend(FunLoading)
 // 将theme中的主题全部导入，并构造成Vue实例
 let themes = {}
 const req = require.context('./themes', false, /\.vue$/)
@@ -31,10 +31,10 @@ LoadingConstructor.prototype.close = function () {
   }
   const target = this.fullscreen || this.body ?
     document.body : this.target
-  removeClass(target, 'teligen-loading-parent--relative')
-  removeClass(target, 'teligen-loading-parent--hidden')
+  removeClass(target, 'fun-loading-parent--relative')
+  removeClass(target, 'fun-loading-parent--hidden')
   if (this.$el) {
-    this.$el.getElementsByClassName('teligen-loading-content')[0].removeChild(this.theme)
+    this.$el.getElementsByClassName('fun-loading-content')[0].removeChild(this.theme)
     this.$el.parentNode && this.$el.parentNode.removeChild(this.$el)
   }
   this.show = false
@@ -93,12 +93,12 @@ const Loading = (options = {}) => {
         el: document.createElement('div'),
         data: themeOption
       })
-      fullscreenLoading.$el.getElementsByClassName('teligen-loading-content')[0].removeChild(fullscreenLoading.theme)
+      fullscreenLoading.$el.getElementsByClassName('fun-loading-content')[0].removeChild(fullscreenLoading.theme)
       fullscreenLoading.themeInstance.$destroy()
       fullscreenLoading.theme = theme.$el
       fullscreenLoading.themeInstance = theme
       fullscreenLoading.themeName = options.theme
-      fullscreenLoading.$el.getElementsByClassName('teligen-loading-content')[0].appendChild(fullscreenLoading.theme)
+      fullscreenLoading.$el.getElementsByClassName('fun-loading-content')[0].appendChild(fullscreenLoading.theme)
     } else {
       Object.keys(options.themeOption).forEach(key => {
         fullscreenLoading.themeInstance[key] = options.themeOption[key]
@@ -116,10 +116,10 @@ const Loading = (options = {}) => {
   })
   addStyle(options, parent, instance)
   if (instance.originalPosition !== 'absolute' && instance.originalPosition !== 'fixed') {
-    addClass(parent, 'teligen-loading-parent--relative')
+    addClass(parent, 'fun-loading-parent--relative')
   }
   if (options.fullscreen && options.lock) {
-    addClass(parent, 'teligen-loading-parent--hidden')
+    addClass(parent, 'fun-loading-parent--hidden')
   }
   let themeOption = Object.assign({}, options.themeOption)
   let theme = new themes[options.theme]({
@@ -129,7 +129,7 @@ const Loading = (options = {}) => {
   instance.themeInstance = theme
   instance.themeName = options.theme
   instance.theme = theme.$el
-  instance.$el.getElementsByClassName('teligen-loading-content')[0].appendChild(theme.$el)
+  instance.$el.getElementsByClassName('fun-loading-content')[0].appendChild(theme.$el)
 
   parent.appendChild(instance.$el)
   Vue.nextTick(() => {

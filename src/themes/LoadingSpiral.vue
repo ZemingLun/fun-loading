@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-spiral" :style="reverseX ? {transform: 'scaleX(-1)'} : {}">
+  <div class="fun-loading fun-loading-spiral" :style="reverseX ? {transform: 'scaleX(-1)'} : {}">
     <div class="spiral" :style="{perspective: perspective+'px'}">
       <div class="stairs"
            :style="{animationDuration: duration+'s', animationDirection: reverseY ? 'reverse' : 'normal'}">
@@ -70,13 +70,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-spiral {
+  .fun-loading-spiral {
     .spiral {
       position: absolute;
       top: 50%;

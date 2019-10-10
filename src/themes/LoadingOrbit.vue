@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-orbit">
+  <div class="fun-loading fun-loading-orbit">
     <div class="star">
       <div class="planet" :style="{animationDuration: duration+'s'}">
         <div class="satellite" :style="{animationDuration: (duration2 || duration)+'s'}"></div>
@@ -21,13 +21,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-orbit {
+  .fun-loading-orbit {
     .star {
       position: absolute;
       top: 50%;

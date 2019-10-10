@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-ball">
+  <div class="fun-loading fun-loading-ball">
     <div class="ball" :style="{background: color, color: invertColor, animationDuration: duration+'s'}"
          :data-text="loadingText"></div>
     <!--<div class="loading-text" v-text="loadingText" :style="{color: color}"></div>-->
@@ -51,13 +51,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-ball {
+  .fun-loading-ball {
     .ball {
       position: absolute;
       top: 50%;

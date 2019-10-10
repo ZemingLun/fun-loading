@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-pacman">
+  <div class="fun-loading fun-loading-pacman">
     <div class="pacman" :style="{animationDuration: duration+'s'}">
       <div class="mouth" :style="{background: 'linear-gradient(0deg, '+(mouthColor || color)+' 50%, transparent 50%)'}">
         <div class="eye" :style="{background: eyeColor || color}"></div>
@@ -37,13 +37,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-pacman {
+  .fun-loading-pacman {
     .pacman {
       position: absolute;
       top: 50%;

@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-moon">
+  <div class="fun-loading fun-loading-moon">
     <div class="moon"></div>
   </div>
 </template>
@@ -9,13 +9,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-moon {
+  .fun-loading-moon {
     .moon {
       position: absolute;
       top: 50%;

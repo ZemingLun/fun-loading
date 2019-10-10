@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-hourglass">
+  <div class="fun-loading fun-loading-hourglass">
     <div class="hourglass" :style="{animationDuration: duration+'s'}">
       <div class="half" :class="[half+'-half']" :style="{boxShadow: '0 -10px 0 9px '+glassColor}" v-for="(half, i) in ['upper', 'lower']" :key="i">
         <div class="sand" :style="{animationDelay: -(duration/2)+'s'}">
@@ -25,13 +25,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-hourglass {
+  .fun-loading-hourglass {
     .hourglass, .sand .flow-out, .sand .flow-in {
       /*animation-duration: 3s;*/
       animation-iteration-count: infinite;

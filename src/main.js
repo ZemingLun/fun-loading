@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import App from './App.vue'
-import TeligenLoading from '../index'
+import FunLoading from '../index'
 
-Vue.use(TeligenLoading)
+Vue.use(FunLoading)
 
 Vue.config.productionTip = false
 

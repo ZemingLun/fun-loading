@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import TeligenLoading from './teligenLoading.vue'
+import FunLoading from './funLoading.vue'
 import { addClass, getStyle, removeClass } from './dom'
-import './teligenLoading.scss'
+import './funLoading.scss'
 
-// loading展示内容 (将TeligenLoading构造成Vue实例)
-const Mask = Vue.extend(TeligenLoading)
+// loading展示内容 (将FunLoading构造成Vue实例)
+const Mask = Vue.extend(FunLoading)
 // 将theme中的主题全部导入，并构造成Vue实例
 let themes = {}
 const req = require.context('./themes', false, /\.vue$/)
@@ -52,7 +52,7 @@ loadingDirective.install = (Vue, Options) => {
       }
       if (!el.themeName || (el.themeName !== option.theme)) {
         if(el.themeInstance){
-          el.mask.getElementsByClassName('teligen-loading-content')[0].removeChild(el.theme)
+          el.mask.getElementsByClassName('fun-loading-content')[0].removeChild(el.theme)
           el.themeInstance.$destroy()
         }
         let themeOption = Object.assign({},  option.themeOption)
@@ -95,8 +95,8 @@ loadingDirective.install = (Vue, Options) => {
       })
     } else {
       const target = binding.modifiers.fullscreen || binding.modifiers.body ? document.body : el
-      removeClass(target, 'teligen-loading-parent--relative')
-      removeClass(target, 'teligen-loading-parent--hidden')
+      removeClass(target, 'fun-loading-parent--relative')
+      removeClass(target, 'fun-loading-parent--hidden')
       el.instance.show = false
     }
   }
@@ -108,12 +108,12 @@ loadingDirective.install = (Vue, Options) => {
         el.mask.style[property] = el.maskStyle[property]
       })
       if (el.originalPosition !== 'absolute' && el.originalPosition !== 'fixed') {
-        addClass(parent, 'teligen-loading-parent--relative')
+        addClass(parent, 'fun-loading-parent--relative')
       }
       if (binding.modifiers.fullscreen && binding.modifiers.lock) {
-        addClass(parent, 'teligen-loading-parent--hidden')
+        addClass(parent, 'fun-loading-parent--hidden')
       }
-      el.mask.getElementsByClassName('teligen-loading-content')[0].appendChild(el.theme)
+      el.mask.getElementsByClassName('fun-loading-content')[0].appendChild(el.theme)
       parent.appendChild(el.mask)
       el.instance.show = true
       el.domInserted = true//标记是否插入过了dom结构
@@ -136,12 +136,12 @@ loadingDirective.install = (Vue, Options) => {
   }
 
   // Vue扩展指令
-  Vue.directive('teligen-loading', {
+  Vue.directive('fun-loading', {
     // 指令绑定时调用
     bind(el, binding, vnode) {
       console.log('bind bind')
       let option = getOption(binding.value)
-      // 初始化TeligenLoading组件
+      // 初始化FunLoading组件
 
       const mask = new Mask({
         el: document.createElement('div'),
@@ -178,7 +178,7 @@ loadingDirective.install = (Vue, Options) => {
     unbind(el, binding) {
       if (el.domInserted) {
         if(el.mask ){
-          el.mask.getElementsByClassName('teligen-loading-content')[0].removeChild(el.theme)
+          el.mask.getElementsByClassName('fun-loading-content')[0].removeChild(el.theme)
           el.mask.parentNode &&
           el.mask.parentNode.removeChild(el.mask)
         }

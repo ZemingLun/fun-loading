@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-swing">
+  <div class="fun-loading fun-loading-swing">
     <div class="swing" :style="{background: color}">
       <div class="ring" :class="['ring-'+item]" :style="{boxShadow: '-2px 0 0 2px '+(ropeColor || invertColor)}"
            v-for="(item, i) in ['left', 'right']" :key="i">
@@ -59,13 +59,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-swing {
+  .fun-loading-swing {
     .swing {
       position: absolute;
       top: 50%;

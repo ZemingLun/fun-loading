@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-ufo">
+  <div class="fun-loading fun-loading-ufo">
     <div class="ufo" :style="{animationDuration: duration+'s'}"></div>
     <div class="loading-text" v-text="loadingText"></div>
   </div>
@@ -16,13 +16,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-ufo {
+  .fun-loading-ufo {
     .ufo {
       position: absolute;
       top: 50%;

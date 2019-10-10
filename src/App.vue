@@ -3,7 +3,7 @@
     <div class="test-loading"></div>
 
     <!--指令方式使用-->
-    <div class="test-loading2" v-teligen-loading="option"></div>
+    <div class="test-loading2" v-fun-loading="option"></div>
 
     <ul>
       <li v-for="(theme, index) in themes" :key="index" @click="changeTheme(theme)"><span> {{ theme }}</span></li>
@@ -18,7 +18,7 @@ export default {
   components: {},
   mounted() {
     // 服务方式使用
-    let loading = this.$teligenLoading({
+    let loading = this.$funLoading({
       theme: 'LoadingFootprints',
       target: '.test-loading',
       themeOption: {

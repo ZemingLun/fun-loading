@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-cat">
+  <div class="fun-loading fun-loading-cat">
     <div class="cat-scene">
       <div class="bed"></div>
       <div class="cat">
@@ -23,13 +23,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-cat {
+  .fun-loading-cat {
     background: lightblue;
     filter: grayscale(.1);
 

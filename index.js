@@ -5,7 +5,7 @@ import service from './src/index'
 export default {
   install(Vue, Options) {
     Vue.use(directive, Options)
-    Vue.prototype.$teligenLoading = service
+    Vue.prototype.$funLoading = service
   },
   directive,
   service

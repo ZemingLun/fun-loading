@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-wave">
+  <div class="fun-loading fun-loading-wave">
     <div class="water-ball"
          :style="{background: background, boxShadow: 'inset 0 0 0 3px '+waves[0].color+',inset 0 0 50px 5px '+waves[0].color}">
       <div class="wave-card"
@@ -33,13 +33,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-wave {
+  .fun-loading-wave {
     .water-ball {
       position: absolute;
       top: 50%;

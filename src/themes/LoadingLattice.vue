@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-lattice">
+  <div class="fun-loading fun-loading-lattice">
     <div class="lattice" :style="{borderColor: borderColor, background: background}">
       <div class="lattice-row clearfix" v-for="(row, i) in lattice" :key="i">
         <div class="lattice-col" :style="{borderColor: borderColor, background: col.colored ? color : 'transparent'}"
@@ -136,13 +136,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-lattice {
+  .fun-loading-lattice {
     display: flex;
     justify-content: center;
     align-items: center;

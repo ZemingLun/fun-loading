@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-footprints">
+  <div class="fun-loading fun-loading-footprints">
     <div class="footprints" :class="[type]" :style="{lineHeight: lineHeight, transform: 'rotate('+rotate+'deg)'}">
       <div class="foot" :class="['foot-'+foot]" v-for="(foot) in ['left', 'right']"
            :style="{animationDuration: duration+'s', animationDelay: foot==='left' ? -(duration/2)+'s' : '0s'}"
@@ -38,13 +38,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-footprints {
+  .fun-loading-footprints {
     .footprints {
       position: absolute;
       top: 50%;

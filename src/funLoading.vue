@@ -2,17 +2,17 @@
   <transition name="loading-fade">
     <div
       v-show="show"
-      class="teligen-loading-mask"
+      class="fun-loading-mask"
       :style="{ backgroundColor: background || '' }"
       :class="[customClass, { 'is-fullscreen': fullscreen }]">
-      <div class="teligen-loading-content"></div>
+      <div class="fun-loading-content"></div>
     </div>
   </transition>
 </template>
 
 <script>
   export default {
-    name: 'teligenLoading',
+    name: 'funLoading',
     data() {
       return {
         show: false,
@@ -35,7 +35,7 @@
     opacity: 0;
   }
 
-  .teligen-loading-mask {
+  .fun-loading-mask {
     z-index: 9999;
     position: absolute;
     top: 0;
@@ -47,7 +47,7 @@
       position: fixed;
     }
   }
-  .teligen-loading-content{
+  .fun-loading-content{
     color: #fff;
     width: 100%;
     height: 100%;

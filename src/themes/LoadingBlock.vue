@@ -1,5 +1,5 @@
 <template>
-  <div class="teligen-loading teligen-loading-block">
+  <div class="fun-loading fun-loading-block">
     <div class="block-combination" :style="{animationDuration: duration+'s'}">
       <div class="block block-0" :style="{background: color}"></div>
       <div class="arm" :class="['arm-'+arm]" v-for="(arm) in ['left', 'right']" :key="'arm-'+arm">
@@ -23,13 +23,13 @@
   }
 </script>
 <style scoped lang="scss">
-  .teligen-loading {
+  .fun-loading {
     position: relative;
     width: 100%;
     height: 100%;
   }
 
-  .teligen-loading-block {
+  .fun-loading-block {
     .block-combination {
       position: absolute;
       top: 50%;

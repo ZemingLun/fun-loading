@@ -1,27 +1,27 @@
-# teligen-loading
+# fun-loading
 
 > 这是一个使用简单，样式多样的loading组件。它能是你系统的loading更有趣。
 
 ## Demo
 
-[例子](https://zeminglun.github.io/teligen-loading/index.html)
+[例子](https://zeminglun.github.io/fun-loading/index.html)
 
 ## 使用
 
 ```bash
 // 引入
-import TeligenLoading from '@/teligen-loading'
+import FunLoading from '@/fun-loading'
 
 // 使用Vue.use加载组件
-Vue.use(TeligenLoading, {themeOption: {loadingText: '加载中...'}})
+Vue.use(FunLoading, {themeOption: {loadingText: '加载中...'}})
 
  <!-- 通过指令方式使用 -->
  <template>
    <!-- 通过对象使用 -->
-   <div id="app" v-teligen-loading.fullscreen="option">
+   <div id="app" v-fun-loading.fullscreen="option">
    
    <!-- 通过boolean使用 -->
-   <div v-if="show" v-teligen-loading="loading" 
+   <div v-if="show" v-fun-loading="loading" 
      style="width: 200px;height: 200px;"></div>
      <router-view/>
    </div>
@@ -45,7 +45,7 @@ Vue.use(TeligenLoading, {themeOption: {loadingText: '加载中...'}})
 
 ## 参数列表
 
-参数能够在多个地方设置，不提供参数会使用默认的参数，参数配置优先级：默认配置 < Vue.use(TeligenLoading, options)中的配置 < v-teligen-loading="options"的配置
+参数能够在多个地方设置，不提供参数会使用默认的参数，参数配置优先级：默认配置 < Vue.use(FunLoading, options)中的配置 < v-fun-loading="options"的配置
 
 | 属性名 | 解释 | 类型 | 默认值 | 是否必传 | 例子 |
 | --------- | --------- | --------- | --------- | --------- | --------- |
